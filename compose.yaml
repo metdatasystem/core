@@ -1,0 +1,18 @@
+services:
+  kafka:
+    container_name: "kafka"
+    image: apache/kafka:latest
+    ports:
+      - "9092:9092"
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+    networks:
+      - mds
+
+volumes:
+  kafka-data:
+    name: kafka-data
+
+networks:
+  mds:
+    name: mds
